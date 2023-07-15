@@ -18,11 +18,6 @@ use OpenAI\Laravel\Facades\OpenAI;
  */
 class ChatController extends Controller
 {
-    /**
-     * Show the main chat screen
-     *
-     * @return ApplicationContract|Factory|View|Application
-     */
     public function index(): Application|View|Factory|ApplicationContract
     {
         $messages = collect(session('messages', []))->reject(fn ($message) => $message['role'] === 'system');
